@@ -1,0 +1,80 @@
+baseURL: https://toriwrites.online/
+languageCode: en-us
+title: Tori Writes (Online)
+theme: cactus
+copyright: MIT
+disqusShortname: toriwrites-online
+summaryLength: 2
+
+author:
+  name: Victoria Rodriguez Ferreira
+  homepage: https://toriwrites.online
+  nickname: Nerdalot
+
+menu:
+  main:
+      # The weight represents the order in which items will appear on the menu
+    - name: Home
+      url: /
+      weight: 1
+
+    - name: Writings
+      url: /posts
+      weight: 2
+
+    - name: Tags
+      url: /tags
+      weight: 3
+
+    - name: About
+      url: /about
+      weight: 4
+
+markup:
+
+  tableOfContents:
+    endLevel: 6
+    ordered: false
+    startLevel: 2
+
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    hl_lines: ''
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: true
+    style: dracula
+    tabWidth: 2
+
+params:
+
+  colortheme: light
+  rss: true
+  description: Personal Website
+  stylesheets:
+    - filename: main.css
+    # - filename: styles.css
+
+  mainSection: posts
+  showAllPostsOnHomePage: false
+  postsOnHomePage: 5
+  tagsOverview: false
+  showProjectsList: true
+  projectsUrl: https://github.com/nerdalot
+
+  dateFormat: 2006-01-02
+
+  show_updated: true
+
+  comments:
+    enabled: true
+    engine: disqus
+
+  social:
+    # To pick more links use valid fontawesome icon names
+    - name: github
+      link: https://github.com/nerdalot
+    - name: email
+      link: vrodriguezfe@icloud.com

@@ -75,8 +75,7 @@
 </body>
 
 <link rel="stylesheet" href={{ "/lib/font-awesome/css/all.min.css" | relURL }}>
-<script src={{ "/lib/jquery/jquery.min.js" | relURL }}></script>
-<script src={{ "/js/main.js" | relURL }}></script>
+{{ partial "scripts.html" . }}
 {{ $mathjax := false }}
 {{ if isset .Params "mathjax" }}
   {{ $mathjax = .Params.mathjax }}

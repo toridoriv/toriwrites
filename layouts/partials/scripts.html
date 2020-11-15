@@ -1,0 +1,9 @@
+<script type="text/javascript" src={{ "lib/jquery/jquery.min.js" | relURL }}></script>
+<script type="text/javascript" src={{ "js/main.js" | relURL }}></script>
+
+{{ if .Site.Params.Scripts }}
+{{ $length := (len .Site.Params.Scripts) }}
+{{ range $index, $dir := .Site.Params.Scripts }}
+<script type="text/javascript" src="{{ $dir.filename | printf "js/%s" | relURL }}"></script>
+{{ end }}
+{{ end }}

@@ -56,7 +56,8 @@ params:
   stylesheets:
     - filename: main.css
     # - filename: styles.css
-
+  scripts:
+    - filename: index.js
   mainSection: posts
   showAllPostsOnHomePage: false
   postsOnHomePage: 5

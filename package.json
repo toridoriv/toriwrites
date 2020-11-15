@@ -12,8 +12,5 @@
     "url": "https://github.com/toriwrites"
   },
   "author": "Victoria Rodriguez Ferreira",
-  "license": "MIT",
-  "dependencies": {
-    "victormono": "^1.4.2"
-  }
+  "license": "MIT"
 }

@@ -1,0 +1,78 @@
+{{ with .Site.Params.GnuPGFingerprint }}
+<a href="https://pgp.key-server.io/pks/lookup?op=vindex&search=0x{{.}}" title="GPG" class="black link hover-black-l"><i class="mv2 mh3 fas fa-unlock-alt fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.StackExchangeID }}
+<a href="https://stackexchange.com/users/{{.}}" rel="me" title="StackExchange" class="black link hover-black-l"><i class="mv2 mh3 fab fa-stack-exchange fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.StackOverflowID }}
+<a href="https://stackoverflow.com/users/{{.}}" rel="me" title="StackExchange" class="black link hover-black-l"><i class="mv2 mh3 fab fa-stack-overflow fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.SlackURL }}
+<a href="{{.}}" title="Slack" class="black link hover-black-l"><i class="mv2 mh3 fab fa-slack fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.twitterID }}
+<a href="https://twitter.com/{{.}}" rel="me" title="Twitter" class="black link hover-cyan"><i class="mv2 mh3 fab fa-twitter fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.MastodonURL }}
+<a href="{{.}}" title="Mastodon" class="black link hover-black-l"><i class="mv2 mh3 fab fa-mastodon fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.GoogleplusID }}
+<a href="https://plus.google.com/{{.}}/about" rel="me" title="Google+" class="black link hover-black-l"><i class="mv2 mh3 fab fa-google-plus fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.FacebookID }}
+<a href="https://facebook.com/{{.}}" rel="me" title="Facebook" class="black link hover-black-l"><i class="mv2 mh3 fab fa-facebook fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.BitbucketID }}
+<a href="https://bitbucket.org/{{.}}" rel="me" title="Bitbucket" class="black link hover-black-l"><i class="mv2 mh3 fab fa-bitbucket fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.githubID }}
+<a href="https://github.com/{{.}}" rel="me" title="GitHub" class="black link hover-gray"><i class="mv2 mh3 fab fa-github fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.GitlabId }}
+<a href="https://gitlab.com/{{.}}" rel="me" title="GitLab" class="black link hover-black-l"><i class="mv2 mh3 fab fa-gitlab fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.CodepenID }}
+<a href="https://codepen.io/{{.}}" rel="me" title="Codepen" class="black link hover-black-l"><i class="mv2 mh3 fab fa-codepen fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.LinkedInID }}
+<a href="https://linkedin.com/in/{{.}}" rel="me" title="LinkedIn" class="black link hover-black-l"><i class="mv2 mh3 fab fa-linkedin fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.MediumID }}
+<a href="https://medium.com/@{{.}}" rel="me" title="Medium" class="black link hover-black-l"><i class="mv2 mh3 fab fa-medium fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.youtubeID }}
+<a href="https://youtube.com/c/{{.}}" rel="me" title="Youtube" class="black link hover-red"><i class="mv2 mh3 fab fa-youtube fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.spotifyID }}
+<a href="https://open.spotify.com/user/{{.}}" rel="me" title="Spotify" class="black link hover-green-d"><i class="mv2 mh3 fab fa-spotify fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.SoundcloudID }}
+<a href="https://soundcloud.com/{{.}}" rel="me" title="Soundcloud" class="black link hover-black-l"><i class="mv2 mh3 fab fa-soundcloud fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.InstagramID }}
+<a href="https://instagram.com/{{.}}" rel="me" title="Instagram" class="black link hover-black-l"><i class="mv2 mh3 fab fa-instagram fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.telegramID }}
+<a href="https://t.me/{{.}}" rel="me" title="Telegram" class="black link hover-cyan-d"><i class="mv2 mh3 fab fa-telegram fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.RedditID }}
+<a href="https://reddit.com/user/{{.}}" rel="me" title="Reddit" class="black link hover-black-l"><i class="mv2 mh3 fab fa-reddit fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.email }}
+<a href="mailto:{{.}}" title="Email" class="black link hover-gray-d"><i class="mv2 mh3 fas fa-envelope fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.Phone }}
+<a href="tel:{{.}}" title="Phone" class="black link hover-black-l"><i class="mv2 mh3 fas fa-phone fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.Mobile }}
+<a href="tel:{{.}}" title="Mobile" class="black link hover-black-l"><i class="mv2 mh3 fas fa-mobile fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.PayPalMeID }}
+<a href="https://www.paypal.me/{{.}}" rel="me" title="PayPal.Me" class="black link hover-black-l"><i class="mv2 mh3 fab fa-paypal fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.XingURL }}
+<a href="{{.}}" rel="me" title="XING" class="black link hover-black-l"><i class="mv2 mh3 fab fa-xing fa-3x" aria-hidden="true"></i></a>
+{{ end }}
+{{ with .Site.Params.CvURL }}
+<a href="{{.}}" title="Curriculum Vitae" class="black link hover-black-l"><i class="mv2 mh3 fas fa-file-alt fa-3x" aria-hidden="true"></i></a>
+{{ end }}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+  <body class="debug code">
+    {{ partial "header.html" . }}
+    <div class="content min-vh-100 pt5">
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+    {{ partial "footer.html" . }}
+  </body>
+  <script src={{ "js/willow.js" | relURL }}></script>
+</html>

@@ -61,7 +61,7 @@ jobs:
     - name: Hugo Deploy GitHub Pages
       uses: benmatselby/hugo-deploy-gh-pages@master
       env:
-        HUGO_VERSION: 0.78.2
+        HUGO_VERSION: 0.80.0
         TARGET_REPO: nerdalot/toriwrites
         TARGET_BRANCH: master
         TOKEN: ${{ secrets.DEPLOY_TOKEN }}

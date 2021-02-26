@@ -29,7 +29,8 @@ $('document').ready(function() {
         });
 
         $('.delete').on('click', function(event) {
-          $(event.target.parentNode.parentNode).toggle({
+          const windowEl = $(event.target).closest('.window');
+          $(windowEl).toggle({
             effect: 'scale',
             complete: closeWindowCallback(this)(icon)
           });

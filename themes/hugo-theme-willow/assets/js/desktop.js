@@ -14,25 +14,29 @@ $('document').ready(function() {
     $('.icon').on('dblclick', function(event) {
       const icon = this;
       const anchor = event.target.closest('a');
-      const modal = createFullWindowElement(anchor);
+      const modal = createFullWindowElement(anchor).hide();
+
+      $(modal).draggable({ handle: '.title-bar' });
+      $(modal).resizable({
+        alsoResize: 'iframe',
+        handles: 's, se, sw'
+      });
+      $(modal).css(windowOptionsCSS());
 
       if (!$(icon).hasClass('open')) {
         $(this).addClass('open');
-        $(modal).appendTo('body').hide().css(windowOptionsCSS()).toggle({
+        $(modal).appendTo('body').toggle({
           effect: 'scale'
         });
 
-        $('.window').draggable({ handle: '.title-bar' });
-        $('.window').resizable({
-          alsoResize: 'iframe',
-          handles: 's, se, sw'
-        });
 
         $('.delete').on('click', function(event) {
           const windowEl = $(event.target).closest('.window');
           $(windowEl).toggle({
             effect: 'scale',
-            complete: closeWindowCallback(this)(icon)
+            complete: function() {
+              closeWindowCallback(windowEl)(icon);
+            }
           });
         });
 

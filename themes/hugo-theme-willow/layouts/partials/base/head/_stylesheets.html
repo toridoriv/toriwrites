@@ -1,6 +1,6 @@
 <!-- 📍 Main SCSS -->
-{{ $sassOptions := (dict "targetPath" "css/main.css" "enableSourceMap" true) }}
-{{ $sassMainFile := resources.Get "scss/main.scss" | resources.ToCSS $sassOptions | fingerprint }}
+{{ $sassOptions := (dict "targetPath" "css/main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $sassMainFile := resources.Get "scss/main.scss" | resources.ToCSS $sassOptions }}
 <link href="{{ $sassMainFile.RelPermalink }}" rel="stylesheet" defer/>
 <!-- 📍 Base Inline -->
 {{ with resources.Get "scss/base/_base.scss" | resources.ExecuteAsTemplate "style.base.scss" . | toCSS | minify }}

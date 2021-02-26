@@ -63,6 +63,8 @@ jobs:
       env:
         HUGO_VERSION: 0.78.2
         TARGET_REPO: nerdalot/toriwrites
+        TARGET_BRANCH: master
         TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        HUGO_ARGS: '--cleanDestinationDir --minify'
+        HUGO_ARGS: '--cleanDestinationDir'
+        HUGO_EXTENDED: true
         CNAME: www.toriwrites.online

@@ -1,0 +1,15 @@
+{
+  "name": "hugo-theme-willow",
+  "version": "1.0.0",
+  "description": "Hugo Theme",
+  "main": "assets/js/global.js",
+  "scripts": {
+    "docs": "./node_modules/.bin/jsdoc assets/js/global.js assets/js/utils.js assets/js/dom.js assets/js/icons.js",
+    "preview": "hugo serve --themesDir ../.. --bind=0.0.0.0",
+    "build": "cd exampleSite && hugo --themesDir ../..",
+    "tt": "node assets/js/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victoria Rodriguez <Nerdalot>",
+  "license": "WTFPL"
+}

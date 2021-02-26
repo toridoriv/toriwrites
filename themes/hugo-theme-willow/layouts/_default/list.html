@@ -1,0 +1,8 @@
+{{ define "main" }}
+<main class="page">
+  {{.Site.Taxonomies}}
+  {{ with .Paginator.Pages }}
+    {{ partial "files.html" . }}
+  {{ end }}
+</main>
+{{ end }}

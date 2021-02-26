@@ -1,0 +1,14 @@
+<!-- 📍 Main SCSS -->
+{{ $sassOptions := (dict "targetPath" "css/main.css" "enableSourceMap" true) }}
+{{ $sassMainFile := resources.Get "scss/main.scss" | resources.ToCSS $sassOptions | fingerprint }}
+<link href="{{ $sassMainFile.RelPermalink }}" rel="stylesheet" defer/>
+<!-- 📍 Base Inline -->
+{{ with resources.Get "scss/base/_base.scss" | resources.ExecuteAsTemplate "style.base.scss" . | toCSS | minify }}
+<style>
+  {{ .Content | safeCSS }}
+</style>
+{{ end }}
+<!-- 📍 Debug -->
+{{ with .Site.Params.debug.enabled }}
+  <link rel="stylesheet" href="{{ "css/debug.css" | relURL }}">
+{{ end }}

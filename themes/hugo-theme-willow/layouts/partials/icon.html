@@ -1,0 +1,21 @@
+{{ $url := "" }}
+{{ $icon := "document.svg" }}
+{{ $title := "" }}
+
+{{ if .item.Params }}
+  {{ $url = .item.Params.RelPermalink }}
+  {{ $title = .item.Params.title }}
+{{ else }}
+  {{ $url = .item.URL }}
+  {{ $icon = .item.Pre }}
+  {{ $title = .item.Name }}
+{{ end }}
+<li class="icon" draggable="true">
+  <a draggable="false" href="{{ $url }}" title="{{ $title }}">
+    <img alt="{{ $title }} icon" src="/images/icons/{{ $icon }}" draggable="false"
+    width="64px" height="64px"/>
+    <span draggable="false">
+      {{- $title -}}
+    </span>
+  </a>
+</li>

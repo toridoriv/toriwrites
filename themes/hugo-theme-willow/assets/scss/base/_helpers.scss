@@ -1,0 +1,36 @@
+/**
+* ⭐️ This file contains CSS helper classes
+*/
+
+/**
+* 📍 1. Positioning
+* Where and how the box is placed
+* clear, display, flex,  float, grid, position
+*/
+
+/**
+* 📍 2. Visibility
+* Can the box be seen?
+* color variables, opacity, visibility, z-index
+*/
+@include helpers-color-background;
+
+/**
+* 📍 3. Box Model
+* Layers of the box model
+* background, border, margin, outline, padding
+*/
+@include helpers-shadow;
+
+/**
+* 📍 4. Dimensions
+* Content dimensions and scrollbars
+* height, overflow, width
+*/
+
+/**
+* 📍 5. Text
+* Self explanatory
+* color, font, text
+*/
+@include helpers-flickering-lights;

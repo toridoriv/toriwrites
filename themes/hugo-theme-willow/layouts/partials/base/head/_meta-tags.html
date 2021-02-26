@@ -1,0 +1,13 @@
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+{{ if not hugo.IsProduction | or (eq .Site.Params.env "development") }}
+  <meta http-equiv="cache-control" content="public, max-age=3600, must-revalidate"/>
+{{ end }}
+<meta name="googlebot" content="index,follow,snippet,archive"/>
+<meta name="robots" content="all,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="author" content="{{ .Params.author | default .Site.Author.name }}"/>
+{{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}"/>
+{{ end }}
+{{ hugo.Generator }}

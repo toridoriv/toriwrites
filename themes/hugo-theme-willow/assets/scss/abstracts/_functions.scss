@@ -1,0 +1,134 @@
+/**
+* ⭐️ This file contains all web-wide Sass functions
+*/
+@import './../vendors/vendor-functions';
+
+/**
+* 📍 1. Positioning
+* Where and how the box is placed
+* clear, display, flex,  float, grid, position
+*/
+
+/**
+* 📍 2. Visibility
+* Can the box be seen?
+* color variables, opacity, visibility, z-index
+*/
+
+/**
+* get-color
+* * Get the value of a color based on its name and modifier
+* @param: { Map } $colors - A collection of color from where to choose
+* @param: { String } $name
+* @param: { String } $modifier
+* @param: { Map } $tones
+* @return: { Color } New color value
+*/
+@function get-color($name, $modifier, $colors: $colors-map, $tones: $color-tone-modifiers) {  
+  $hex: map-get($map: $colors, $key: $name);
+  $tone: map-get($map: $tones, $key: $modifier);
+  $light: map-get($map: $tone, $key: 'lightness');
+  $sat: map-get($map: $tone, $key: 'saturation');
+  
+  @return scale-color($color: $hex, $lightness: $light, $saturation: $sat);
+};
+
+/**
+* create-color-palette
+* * Create tint and shade of a single color
+* @param: { String } $name
+* @param: { Map } $colors - A collection of color from where to choose
+* @param: { Map } $tones
+* @return: { Map } New color palette
+*/
+@function create-color-palette($name, $colors: $colors-map, $tones: $color-tone-modifiers) {
+  
+  $palette: ();
+  
+  @each $tone, $variation in $tones {
+    $map: (
+      #{$name}-#{$tone}: get-color($name: $name, $modifier: $tone)
+    );
+
+    $palette: append($palette, $map); 
+  };
+
+  @return $palette;
+};
+
+/**
+* create-all-colors-palette
+* * Create a new palette of colors based on a map of colors and a map of tone variation
+* @param: { Map } $colors - A collection of color from where to choose
+* @return: { Map } New palette
+*/
+@function create-all-colors-palette($colors: $color-map) {
+  $palette: ();
+
+  @each $name, $value in $colors {
+    $color-palette: create-color-palette($name);
+
+    @each $color in $color-palette {
+      $palette: append($palette, $color);
+    }
+  }
+
+  @return $palette;
+};
+
+/**
+* 📍 3. Box Model
+* Layers of the box model
+* background, border, margin, outline, padding
+*/
+
+/**
+* 📍 4. Dimensions
+* Content dimensions and scrollbars
+* height, overflow, width
+*/
+
+/**
+* 📍 5. Text
+* Self explanatory
+* color, font, text
+*/
+
+@function create-shadow-text($color-name, $modifier: 'base') {
+  $color-1: get-color($color-name, $modifier);
+  $color-2: get-color($color-name, 'shade');
+  $shadow-values: (.1vw 0vw .25vw $color-2, .2vw 0vw .25vw $color-2, .4vw 0vw .25vw $color-2);
+  $min: 5;
+  $max: 75;
+  $step: 15;
+  
+  @for $min from 1 through 5 {
+    $pixels: $min * $step;
+    $list-item: 0 0 #{$pixels}px $color-1;
+    $shadow-values: append($shadow-values, $list-item, $separator: comma);
+  }
+  @return $shadow-values;
+};
+
+/**
+* set-text-color
+* * Set text color based on contrast with background
+* @param: { Color } $background-color
+* @return: { Color } $text-color-dark or $text-color-light
+*/
+@function set-text-color($background-color, $text-color: $text-color) {
+  $text-dark: map-get($text-color, 'dark');
+  $text-light: map-get($text-color, 'light');
+
+  $color-dark: get-color($name: map-get($text-dark, 'name'), $modifier: map-get($text-dark, 'modifier'));
+  $color-light: get-color($name: map-get($text-light, 'name'), $modifier: map-get($text-light, 'modifier'));
+
+  $dark-contrast: get-color-contrast($background-color, $color-dark);
+  $light-contrast: get-color-contrast($background-color, $color-light);
+
+  @if $light-contrast > $dark-contrast {
+    @return $color-light;
+  } @else {
+    @return $color-dark;
+  };
+};

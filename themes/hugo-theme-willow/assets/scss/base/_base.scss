@@ -1,0 +1,46 @@
+/**
+* ⭐️ This file contains very basic styles that will be applied inline
+*/
+@import './../abstracts/functions';
+@import './../abstracts/placeholders';
+@import './../abstracts/variables';
+
+*,
+*::before,
+*::after {
+  box-sizing: $box-size;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  @extend %font-base;
+  height: $height-body;
+  width: $width-body;
+}
+
+body {
+  background-color: $color-background;
+}
+
+main.page {
+  background-color: get-color('black', 'tint');
+  height: 100%;
+}
+
+body {
+  a {
+    text-decoration: $text-decoration-link;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+  }
+}
+
+main {
+  backdrop-filter: $blur;
+  height: inherit;
+}

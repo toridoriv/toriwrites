@@ -1,0 +1,2 @@
+{{ $scriptDebug :=  resources.Get "js/debug.js" | resources.Minify }}
+<script src="{{ $scriptDebug.RelPermalink }}"></script>

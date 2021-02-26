@@ -1,0 +1,82 @@
+@import './keyframes';
+@import './variables';
+
+/**
+* 📍 1. Positioning
+* Where and how the box is placed
+* clear, display, flex,  float, grid, position
+*/
+%center-box {
+  margin: auto;
+  width: 70%;
+}
+
+/**
+* 📍 2. Visibility
+* Can the box be seen?
+* color variables, opacity, visibility, z-index
+*/
+
+/**
+* 📍 3. Box Model
+* Layers of the box model
+* background, border, margin, outline, padding
+*/
+%has-background {
+  background-attachment: fixed;
+  background-position: 20% 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: $margin-body;
+  min-height: $height-body;
+  width: $width-body;
+}
+
+%is-icon {
+  display: block;
+  margin: 1rem;
+  height: 90px;
+  padding: .4rem .5rem 0 .5rem;
+  width: calc(64px + 1rem);
+  a {
+    color: $color-white;
+    font-family: $font-family-sans-serif;
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 1px 1px 0 $color-black;
+  }
+  img {
+    filter: drop-shadow(1px 1px 0 get-color('black', 'base'));
+    width: 100%;
+  }
+  span {
+    display: block;
+    width: 100%;
+  }
+  &:hover {
+    background-color: scale-color($color-cyan, $alpha: -80%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    outline: 1px solid scale-color($color-cyan, $alpha: -80%);
+  }
+}
+
+/**
+* 📍 4. Dimensions
+* Content dimensions and scrollbars
+* height, overflow, width
+*/
+
+/**
+* 📍 5. Text
+* Self explanatory
+* color, font, text
+*/
+
+%font-base {
+  font-family: $font-family-monospace;
+  font-size: $font-size-body;
+  font-weight: $font-weight-body;
+}

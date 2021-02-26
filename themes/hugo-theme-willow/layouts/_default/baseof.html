@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+    {{ partial "base/head/head.html" . }}
+    <body>
+      {{ block "main" . }} {{ end }}
+      {{ partial "base/scripts/scripts.html" . }}
+    </body>
+</html>

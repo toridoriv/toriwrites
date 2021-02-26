@@ -1,0 +1,124 @@
+/**
+* ⭐️ This file contains all web-wide Sass variables
+*/
+
+/**
+* 📍 1. Positioning
+* Where and how the box is placed
+* clear, display, flex,  float, grid, position
+*/
+
+$breakpoint-desktop: 960px !default;
+$breakpoint-fullhd: 1344px !default;
+$breakpoint-tablet: 769px !default;
+$breakpoint-widescreen: 1152px !default;
+
+/**
+* 📍 2. Visibility
+* Can the box be seen?
+* color variables, opacity, visibility, z-index
+*/
+
+$blur: blur(6px);
+
+$color-black: #2B2E3B !default;
+$color-blue: #B580FF !default;
+$color-cyan: #99EEFF !default;
+$color-green: #4DFF79 !default;
+$color-magenta: #FF80CA !default;
+$color-red: #FF4D4D !default;
+$color-yellow: #ECF2B3 !default;
+$color-white: #E2E3E9 !default;
+$color-background: #008080 !default;
+
+$color-tone-modifiers: (
+  base: (
+    'lightness': 0%,
+    'saturation': 0%
+  ),
+  tint: (
+    'lightness': 30%,
+    'saturation': -30%
+  ),
+  shade: (
+    'lightness': -30%,
+    'saturation': -30%
+  )
+)!default;
+
+$colors-map: (
+  'black': $color-black,
+  'blue': $color-blue, //purple
+  'cyan': $color-cyan,
+  'green': $color-green,
+  'magenta': $color-magenta, //pink
+  'red': $color-red,
+  'yellow': $color-yellow,
+  'white': $color-white
+)!default;
+
+/**
+* 📍 3. Box Model
+* Layers of the box model
+* background, border, margin, outline, padding
+*/
+
+$box-size: border-box;
+
+// TODO: Conver px to rem
+$margin-body: 0;
+
+$spacing-base: 16px / 2;
+$spacing-small: ($spacing-base * 2) * 1.2;
+$spacing-medium: ($spacing-base * 2) * 1.4;
+$spacing-large: ($spacing-base * 2) * 1.6;
+$spacing-extra-large: ($spacing-base * 2) * 2;
+
+$shadow-properties: 'box', 'text';
+$shadow-colors: 'black', 'white';
+$shadow-modifiers: 'tint', 'shade';
+
+/**
+* 📍 4. Dimensions
+* Content dimensions and scrollbars
+* height, overflow, width
+*/
+
+$height-body: 100vh;
+$height-content: calc(100vh - 45px);
+$height-header: $spacing-base * 3;
+$height-footer: $height-header;
+
+$width-body: 100vw;
+$width-content: 100%;
+
+/**
+* 📍 5. Text
+* Self explanatory
+* color, font, text
+*/
+
+$font-family-cursive: 'Monoton', cursive !default; // main title
+$font-family-monospace: 'Victor Mono', monospace !default; // content
+$font-family-sans-serif: 'Titillium Web', sans-serif !default; // headings
+
+$font-size-body: 16px !default;
+$font-size-content-max: 1rem !default;
+$font-size-content-min: 1em / 1.2 !default;
+$font-size-x-large: 4rem;
+$font-size-large: 3rem;
+
+$font-weight-body: 300 !default;
+
+$text-color: (
+  dark: (
+    name: 'black',
+    modifier: 'shade'
+  ),
+  light: (
+    name: 'white',
+    modifier: 'tint'
+  )
+);
+
+$text-decoration-link: none;

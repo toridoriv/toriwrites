@@ -1,0 +1,13 @@
+<nav aria-label="primary" id="navigation" role="{{ .priority }}">
+  <ul>
+    {{ $marginDir := "" }}
+    {{ if eq .priority "primary" }}
+      {{ $marginDir = "top" }}
+    {{ else }}
+      {{ $marginDir = "right" }}
+    {{ end }}
+    {{ range $index, $item := .items }}
+      {{ partial "icon.html" (dict "item" $item "counter" $index "marginDir" $marginDir) }}
+    {{ end }}
+  </ul>
+</nav>

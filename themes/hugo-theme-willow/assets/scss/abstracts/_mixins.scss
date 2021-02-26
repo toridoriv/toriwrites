@@ -1,0 +1,97 @@
+/**
+* ⭐️ This file contains all web-wide Sass mixins
+*/
+
+/**
+* 📍 1. Positioning
+* Where and how the box is placed
+* clear, display, flex,  float, grid, position
+*/
+
+/**
+* 📍 2. Visibility
+* Can the box be seen?
+* color variables, opacity, visibility, z-index
+*/
+
+@mixin helpers-color-background($colors: $colors-map) {
+  $palette: create-all-colors-palette($colors);
+
+  @each $color in $palette {
+    @each $name, $value in $color {
+      .bg-#{$name} {
+        background-color: $value;
+        color: set-text-color($value);
+      }
+      .bg-#{$name}--hvr:hover {
+        background-color: $value;
+        color: set-text-color($value);
+      }
+    }
+  }
+};
+
+@mixin fickle-light($color-name, $color-value) {
+  span {
+    color: $color-white;
+  }
+  @for $i from 1 through 7 {
+    @if $i == 1 {
+      span:nth-of-type(#{$i}) {
+        animation: flicker 2s cubic-bezier(0.4, 0, 0.2, 1) alternate infinite;
+      } 
+    } @else if $i % 3 == 0 and $i != 1 {
+      span:nth-of-type(#{$i}) {
+        animation: flicker 1s cubic-bezier(0.4, 0, 0.2, 1) alternate infinite;
+      } 
+    }
+  }
+};
+
+@mixin helpers-flickering-lights {
+
+  @each $name, $value in $colors-map {
+    .flickering-lights-#{$name} {
+      @include fickle-light($name, $value);
+      text-shadow: create-shadow-text($name);
+    };
+  };
+};
+/**
+* 📍 3. Box Model
+* Layers of the box model
+* background, border, margin, outline, padding
+*/
+@mixin add-shadow($property, $color, $modifier, $type: 'small', $blur: 0) {
+  @if $type == 'small' {
+  #{$property}-shadow: .8px .8px $blur get-color($color, $modifier);
+  }
+};
+
+@mixin helpers-shadow {
+  @each $property in $shadow-properties {
+    @each $color in $shadow-colors {
+      @each $modifier in $shadow-modifiers {
+        .#{$property}-shadow-#{$color}-#{$modifier} {
+          @include add-shadow($property, $color, $modifier);
+        }
+      }
+    }
+  }
+};
+
+/**
+* 📍 4. Dimensions
+* Content dimensions and scrollbars
+* height, overflow, width
+*/
+
+/**
+* 📍 5. Text
+* Self explanatory
+* color, font, text
+*/
+@mixin set-background-and-text($color) {
+  background-color: $color;
+  color: set-text-color($color);
+};

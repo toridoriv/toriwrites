@@ -1,0 +1,4 @@
+{{ $options := (dict "targetPath" "js/app.js" "minify" false "target" "es2015" "format" "iife") }}
+{{ $bundle := resources.Get "js/desktop.js" | js.Build $options }}
+<script type="text/javascript" src="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" defer></script>
+

@@ -1,0 +1,19 @@
+<head>
+  {{ partial "base/head/_meta-tags.html" . }}
+    <title>{{ if .IsPage }} {{ .Title }} | {{ end }} {{ .Site.Title }}</title>
+  {{ `
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  ` | safeHTML }}
+  {{ partial "base/head/_favicon.html" . }}
+  {{ partial "base/head/_fonts.html" . }}
+  {{ with .OutputFormats.Get "SectionsAtom" -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}" />
+  {{ end -}}
+  {{ with .OutputFormats.Get "SectionsRSS" -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}" />
+  {{ end }}
+  {{ partial "base/head/_stylesheets.html" . }}
+</head>

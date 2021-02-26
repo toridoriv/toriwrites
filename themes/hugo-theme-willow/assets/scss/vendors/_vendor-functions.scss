@@ -1,0 +1,33 @@
+/**
+* The following functions were taken from:
+* https://gist.github.com/sgomes/9c03a58976b90e00f4172a510b9807fa#file-functions-scss
+*/
+@import './vendor-variables';
+
+/**
+* color-luminance
+* * Calculate luminance of a given color
+* @param: { Color } $color
+* @return: { Number? } 
+*/
+@function get-color-luminance($color) {
+  $red: nth($color-linear-channel-values, red($color) + 1);
+  $green: nth($color-linear-channel-values, green($color) + 1);
+  $blue: nth($color-linear-channel-values, blue($color) + 1);
+
+  @return .2126 * $red + .7152 * $green + .0722 * $blue;
+};
+
+/**
+* contrast
+* * Calculate contrast between two colors
+* @param: { Color } $color-background
+* @param: { Color } $color-foreground - Posible text color
+* @return: { Number } 
+*/
+@function get-color-contrast($color-background, $color-foreground) {
+  $luminance-background: get-color-luminance($color-background) + .05;
+  $luminance-foreground: get-color-luminance($color-foreground) + .05;
+
+  @return max($luminance-background, $luminance-foreground) / min($luminance-background, $luminance-foreground);
+};

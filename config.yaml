@@ -1,28 +1,41 @@
 baseURL: 'https://toriwrites.online'
-copyright: MIT
+copyright: WTFPL
 disqusShortname: toriwrites-online
 languageCode: en-us
-theme: willow
+theme: hugo-theme-willow
 title: Tori Writes (Online)
 
 menu:
-  header:
-    - name: about
-      weight: 0
-      url: about
-    - name: projects
+  main:
+    - identifier: webmaster
+      name: Webmaster
+      url: webmaster
+      pre: webmaster.svg
       weight: 1
-      url: projects
-    - name: blog
+    - identifier: about
+      name: About
+      url: about
+      pre: about.svg
       weight: 2
+    - identifier: projects
+      name: Projects
+      url: projects
+      pre: projects.svg
+      weight: 3
+    - identifier: blog
+      name: Blog
       url: blog
+      pre: blog.svg
+      weight: 4
+    - identifier: contact
+      name: Contact
+      url: contact
+      pre: contact.svg
+      weight: 5
 
 params:
   author: Victoria Rodriguez
-  description: Description
-  headerHostname: toriwrites.online
-  headerUsername: Tori
-  profilePicture: nerdalot--avatar-rainbow.svg
+  wallpaper: /images/win-90s.jpg
 
   ## 📌 Social Networks
   email: vrodriguezfe@icloud.com
@@ -32,6 +45,6 @@ params:
   twitterID: nerdalot
   youtubeID: UCoACZSKfzZcl2fDT1ybaRwA
 
-  ## 📌 Debugging
+  ## 📌 Extra Tools
   debug:
-    enabled: true
+    enabled: false

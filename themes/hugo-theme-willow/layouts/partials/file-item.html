@@ -1,0 +1,15 @@
+<tr>
+  <td>
+    <a href="{{ .RelPermalink }}">
+      <span class="icon">📄</span>
+      {{ .Title }}
+    </a>
+  </td>
+  <td>{{ .PublishDate.Format "2006-01-02" }}</td>
+  <td>{{ .Lastmod.Format "2006-01-02" }}</td>
+  {{ with .Params.tags }}
+    <td>{{ delimit . ", " }}</td>
+  {{ else }}
+    <td></td>
+  {{ end }}
+</tr>

@@ -1,0 +1,7 @@
+{{ with .Site.Params.debug.enabled }}
+  {{ partial "base/scripts/_debug.html" }}
+{{ end }}
+{{ if or (isset .Params "desktop") (.IsHome) }}
+  {{ partial "base/scripts/_vendor.html" }}
+  {{ partial "base/scripts/_app.html" }}
+{{ end }}

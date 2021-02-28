@@ -20,12 +20,12 @@ html, body {
 }
 
 body {
-  background-color: $color-background;
+  background-color: $color-background-home;
 }
 
 main.page {
-  background-color: get-color('black', 'tint');
-  height: 100%;
+  background-color: $color-background-page;
+  height: $height-content;
 }
 
 body {

@@ -29,7 +29,7 @@ $color-magenta: #FF80CA !default;
 $color-red: #FF4D4D !default;
 $color-yellow: #ECF2B3 !default;
 $color-white: #E2E3E9 !default;
-$color-background: #008080 !default;
+$color-background-home: #008080 !default;
 
 $color-tone-modifiers: (
   base: (
@@ -56,6 +56,8 @@ $colors-map: (
   'yellow': $color-yellow,
   'white': $color-white
 )!default;
+
+$color-background-page: get-color('white', 'shade') !default;
 
 /**
 * 📍 3. Box Model
@@ -91,6 +93,7 @@ $height-footer: $height-header;
 
 $width-body: 100vw;
 $width-content: 100%;
+$height-content: 100%;
 
 /**
 * 📍 5. Text
@@ -98,7 +101,6 @@ $width-content: 100%;
 * color, font, text
 */
 
-$font-family-cursive: 'Monoton', cursive !default; // main title
 $font-family-monospace: 'Victor Mono', monospace !default; // content
 $font-family-sans-serif: 'Titillium Web', sans-serif !default; // headings
 

@@ -7,7 +7,7 @@
       {{ $marginDir = "right" }}
     {{ end }}
     {{ range $index, $item := .items }}
-      {{ partial "icon.html" (dict "item" $item "counter" $index "marginDir" $marginDir) }}
+      {{ partial "navbar-item.html" (dict "item" $item "counter" $index "marginDir" $marginDir) }}
     {{ end }}
   </ul>
 </nav>

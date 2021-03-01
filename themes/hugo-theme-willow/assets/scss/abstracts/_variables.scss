@@ -70,7 +70,7 @@ $box-size: border-box;
 // TODO: Conver px to rem
 $margin-body: 0;
 
-$spacing-base: 16px / 2;
+$spacing-base: 1rem / 2;
 $spacing-small: ($spacing-base * 2) * 1.2;
 $spacing-medium: ($spacing-base * 2) * 1.4;
 $spacing-large: ($spacing-base * 2) * 1.6;
@@ -94,6 +94,8 @@ $height-footer: $height-header;
 $width-body: 100vw;
 $width-content: 100%;
 $height-content: 100%;
+$width-icon: ($spacing-base * 2) * 4;
+$width-total: 100%;
 
 /**
 * 📍 5. Text
@@ -106,11 +108,11 @@ $font-family-sans-serif: 'Titillium Web', sans-serif !default; // headings
 
 $font-size-body: 16px !default;
 $font-size-content-max: 1rem !default;
-$font-size-content-min: 1em / 1.2 !default;
+$font-size-content-min: 1rem / 1.2 !default;
 $font-size-x-large: 4rem;
 $font-size-large: 3rem;
 
-$font-weight-body: 300 !default;
+$font-weight-body: 400 !default;
 
 $text-color: (
   dark: (

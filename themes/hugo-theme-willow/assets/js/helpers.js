@@ -11,7 +11,7 @@ export const createElementWithClass = element => classes =>
   $(document.createElement(element)).addClass(classes);
 
 export const windowElement = (classes = '') => children =>
-  createElementWithClass('div')(`window modal-card ${ classes }`).append(children);
+  createElementWithClass('div')(`window ${ classes }`).append(children);
 
 export const closeWindowCallback = element => icon => {
   $(element).remove();
@@ -24,24 +24,35 @@ export const windowOptionsCSS = () => ({
 });
 
 export const windowHeaderElement = (classes = '') => text => children => {
-  const header = createElementWithClass('header')(`title-bar modal-card-head ${ classes }`);
-  header.append('p').text(text);
+  const header = createElementWithClass('header')(`title-bar ${ classes }`);
+  header.append(createElementWithClass('p')('title-bar-text')).text(text);
   header.append(children);
   return header;
 };
 
-export const iframeElement = url => $(document.createElement('iframe')).attr('src', url);
+export const iframeElement = url => createElementWithClass('iframe')('window-body').attr('src', url);
 
-export const buttonElement = classes => ariaLabel => (text = '') =>
+export const buttonElement = (classes = []) => ariaLabel => (text = '') =>
   $(createElementWithClass('button')(classes)).attr('aria-label', ariaLabel);
+
+export const titlebarControls = () => {
+  const container = createElementWithClass('div')('title-bar-controls');
+  const min = buttonElement('minimize')('Minimize')().append(createElementWithClass('img')().attr('src', 'images/icons/98-icons/minimize.svg'));
+  const max = buttonElement('maximize')('Maximize')().append(createElementWithClass('img')().attr('src', 'images/icons/98-icons/maximize.svg'));
+  const close = buttonElement('close')('Close')().append(createElementWithClass('img')().attr('src', 'images/icons/98-icons/close.svg'));
+
+  container.append(min, max, close);
+
+  return container;
+};
 
 export const windowStatusBarElement = classes => createElementWithClass('footer')(classes);
 
 export const createFullWindowElement = anchor => {
-  const closeBtn = buttonElement('delete')('close');
+  const controls = titlebarControls();
   return windowElement()([
-    windowHeaderElement()(anchor.title)([closeBtn]),
+    windowHeaderElement()(anchor.title)(controls),
     iframeElement(anchor.href),
-    windowStatusBarElement('status-bar modal-card-foot')
+    //windowStatusBarElement('status-bar modal-card-foot')
   ]);
-}
+};

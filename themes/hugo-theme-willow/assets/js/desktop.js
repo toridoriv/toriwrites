@@ -29,11 +29,10 @@ $('document').ready(function() {
           effect: 'scale'
         });
 
-
-        $('.delete').on('click', function(event) {
+        $('.close').on('click', function(event) {
           const windowEl = $(event.target).closest('.window');
           $(windowEl).toggle({
-            effect: 'scale',
+            effect: 'clip',
             complete: function() {
               closeWindowCallback(windowEl)(icon);
             }

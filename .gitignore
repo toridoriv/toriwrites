@@ -106,3 +106,4 @@ dist
 public
 resources
 .DS_Store
+.nova

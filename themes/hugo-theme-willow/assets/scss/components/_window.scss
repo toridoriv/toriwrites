@@ -1,18 +1,24 @@
 .window {
-  border-radius: $spacing-base;
-  //overflow: auto;
-  padding-top: 1.5rem;
+  // border-radius: $spacing-base;
+  // //overflow: auto;
+  // padding-top: 1.5rem;
   position: absolute!important;
-  //resize: both;
+  // //resize: both;
   width: 30vw;
-  //z-index: 9999;
+  // //z-index: 9999;
+  iframe {
+    width: 100%;
+  }
   .title-bar {
-    justify-content: space-between;
-    display: flex;
-    height: $spacing-medium;
-    position: absolute;
-    top: 0;
-    width: $width-total;
+    color: $color-white;
+    font-size: $font-size-content-min;
+    height: $spacing-large;
+  //   justify-content: space-between;
+  //   display: flex;
+  //   height: $spacing-medium;
+  //   position: absolute;
+  //   top: 0;
+  //   width: $width-total;
   }
   .status-bar {
     @extend %remove-spacing;
@@ -26,35 +32,35 @@
   }
 }
 //   background-color: transparentize($color-black, 0.8);
-.ui-resizable-handle {
-  bottom: ($spacing-medium - 1rem) * -1;
-  color: $color-background-page;
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 700;
-  position: absolute;
-  &.ui-resizable-s {
-    border-bottom: (($spacing-medium - 1rem) / 2) solid $color-background-page;
-    bottom: ($spacing-medium - 1rem) / 2;
-    cursor: s-resize;
-    left: 0;
-    margin: auto;
-    right: 0;
-    width: $spacing-medium;
-  }
-  &.ui-resizable-se {
-    cursor: se-resize;
-    right: 0;
-    transform: rotate(-45deg);
-    &:before {
-      content: '\f107';
-    }
-  }
-  &.ui-resizable-sw {
-    cursor: sw-resize;
-    left: 0;
-    transform: rotate(45deg);
-    &:before {
-      content: '\f107';
-    }
-  }
-}
+// .ui-resizable-handle {
+//   bottom: ($spacing-medium - 1rem) * -1;
+//   color: $color-background-page;
+//   font-family: 'Font Awesome 5 Free';
+//   font-weight: 700;
+//   position: absolute;
+//   &.ui-resizable-s {
+//     border-bottom: (($spacing-medium - 1rem) / 2) solid $color-background-page;
+//     bottom: ($spacing-medium - 1rem) / 2;
+//     cursor: s-resize;
+//     left: 0;
+//     margin: auto;
+//     right: 0;
+//     width: $spacing-medium;
+//   }
+//   &.ui-resizable-se {
+//     cursor: se-resize;
+//     right: 0;
+//     transform: rotate(-45deg);
+//     &:before {
+//       content: '\f107';
+//     }
+//   }
+//   &.ui-resizable-sw {
+//     cursor: sw-resize;
+//     left: 0;
+//     transform: rotate(45deg);
+//     &:before {
+//       content: '\f107';
+//     }
+//   }
+// }

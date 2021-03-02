@@ -1,6 +1,7 @@
 @import './vendors/vendor-functions';
 @import './vendors/vendor-variables';
 @import './vendors/bulma/bulma';
+@import './vendors/98/style';
 
 @import './abstracts/functions';
 @import './abstracts/keyframes';
@@ -11,4 +12,27 @@
 @import './base/helpers';
 
 @import './components/navbar';
+@import './components/title';
 @import './components/window';
+
+button,
+label,
+input,
+textarea,
+select,
+option,
+ul.tree-view,
+.window,
+.title-bar {
+  font-family: $font-family-sans-serif;
+  letter-spacing: $sans-serif-letter-spacing;
+  -webkit-font-smoothing: auto;
+}
+
+.title-bar-controls button[aria-label="Minimize"],
+.title-bar-controls button[aria-label="Maximize"],
+.title-bar-controls button[aria-label="Close"] {
+  background-image: none;
+  height: $spacing-medium - .2rem;
+  width: $spacing-medium - .2rem;
+}

@@ -1,0 +1,24 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: unset!important;
+  position: relative;
+  h1 {
+    font-family: $font-family-sans-serif;
+    //font-family: $font-family-sans-serif!important;
+    font-size: $font-size-large;
+    font-weight: 700;
+    text-shadow: 4px 2px 0 transparentize($color-white, 0);
+    z-index: 10;
+  }
+  .line {
+    background: $color-red; /* Old browsers */
+    background: -moz-linear-gradient(left, $color-red 10%, $color-yellow 30%, $color-green 50%, $color-blue 70%, $color-background-page 90%);
+    background: -webkit-linear-gradient(left, $color-red 10%, $color-yellow 30%, $color-green 50%, $color-blue 70%, $color-background-page 90%);
+    background: linear-gradient(to right, $color-red 10%, $color-yellow 30%, $color-green 50%, $color-blue 70%, $color-background-page 90%);
+    height: $spacing-base / 2;
+    position: absolute;
+    bottom: 40%;
+    width: $width-body;
+  }
+}

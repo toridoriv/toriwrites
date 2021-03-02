@@ -23,7 +23,9 @@ body {
 }
 
 main.page {
-  background-color: $color-background-page;
+  background-image: linear-gradient(to bottom, transparentize($color-white, 0.6), transparentize($color-white, 0.6)), url('/images/clouds.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   height: $height-content;
   padding-top: 1.2em;
   padding-left: .4em;
@@ -40,9 +42,4 @@ nav {
   ul {
     list-style: none;
   }
-}
-
-main {
-  backdrop-filter: $blur;
-  height: inherit;
 }

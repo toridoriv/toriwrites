@@ -3,6 +3,8 @@ export const getRandomBoolean = () =>
 
 export const getRandomFromRange = min => max => couldBeNegative =>
   Math.floor((Math.random() * (max - min)) + 1) * (couldBeNegative ? (getRandomBoolean() ? -1 : 1) : 1);
+  
+export const getPercentage = num => percentage => (num * percentage) / 100;
 
 export const shortenText = length => text =>
   text.trim().substring(0, length).split(' ').slice(0, -1).join(' ') + '...';
@@ -19,8 +21,8 @@ export const closeWindowCallback = element => icon => {
 };
 
 export const windowOptionsCSS = () => ({
-  left: `${getRandomFromRange(0)(70)(false)}%`,
-  top: `${getRandomFromRange(0)(70)(false)}%`
+  left: `${getRandomFromRange(0)(50)(false)}%`,
+  top: `${getRandomFromRange(0)(50)(false)}%`
 });
 
 export const windowHeaderElement = (classes = '') => text => children => {
@@ -37,9 +39,9 @@ export const buttonElement = (classes = []) => ariaLabel => (text = '') =>
 
 export const titlebarControls = () => {
   const container = createElementWithClass('div')('title-bar-controls');
-  const min = buttonElement('minimize')('Minimize')().append(createElementWithClass('img')().attr('src', 'images/icons/98-icons/minimize.svg'));
-  const max = buttonElement('maximize')('Maximize')().append(createElementWithClass('img')().attr('src', 'images/icons/98-icons/maximize.svg'));
-  const close = buttonElement('close')('Close')().append(createElementWithClass('img')().attr('src', 'images/icons/98-icons/close.svg'));
+  const min = buttonElement('minimize')('Minimize')();
+  const max = buttonElement('maximize')('Maximize')();
+  const close = buttonElement('close')('Close')();
 
   container.append(min, max, close);
 
@@ -53,6 +55,5 @@ export const createFullWindowElement = anchor => {
   return windowElement()([
     windowHeaderElement()(anchor.title)(controls),
     iframeElement(anchor.href),
-    //windowStatusBarElement('status-bar modal-card-foot')
   ]);
 };

@@ -16,13 +16,18 @@ $('document').ready(function() {
       const anchor = event.target.closest('a');
       const modal = createFullWindowElement(anchor).hide();
 
-      $(modal).draggable({ handle: '.title-bar' });
-      $(modal).resizable({
-        alsoResize: 'iframe',
+      modal.resizable({
         handles: 's, se, sw'
       });
+      
+      $(modal).draggable({
+        containment: 'body',
+        handle: '.title-bar',
+        snap: false
+      });
+      
       $(modal).css(windowOptionsCSS());
-
+      
       if (!$(icon).hasClass('open')) {
         $(this).addClass('open');
         $(modal).appendTo('body').toggle({

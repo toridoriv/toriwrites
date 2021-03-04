@@ -7,6 +7,7 @@ nav[aria-label='primary'] {
     flex-wrap: wrap;
     height: $height-body;
     li.icon {
+      box-sizing: content-box;
       display: block;
       margin: $spacing-base;
       padding: $spacing-base;

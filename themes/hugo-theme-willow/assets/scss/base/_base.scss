@@ -14,22 +14,24 @@
 
 html, body {
   @extend %font-base;
-  height: $height-body;
-  width: $width-body;
+  height: $height-content;  
+  width: $width-content;
 }
 
 body {
   background-color: $color-background-home;
 }
 
-main.page {
-  background-image: linear-gradient(to bottom, transparentize($color-white, 0.6), transparentize($color-white, 0.6)), url('/images/clouds.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: $height-content;
-  padding-top: 1.2em;
-  padding-left: .4em;
-  padding-right: .4em;
+main {
+  &.page {
+    background-image: linear-gradient(to bottom, transparentize($color-white, 0.6), transparentize($color-white, 0.6)), url('/images/clouds.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow: auto;
+    padding: 1rem;
+    width: 100%;
+  }
 }
 
 body {
@@ -39,6 +41,7 @@ body {
 }
 
 nav {
+  position: absolute;
   ul {
     list-style: none;
   }

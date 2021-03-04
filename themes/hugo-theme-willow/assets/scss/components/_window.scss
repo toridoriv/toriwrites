@@ -1,66 +1,40 @@
 .window {
-  // border-radius: $spacing-base;
-  // //overflow: auto;
-  // padding-top: 1.5rem;
   position: absolute!important;
-  // //resize: both;
   width: 30vw;
-  // //z-index: 9999;
   iframe {
-    width: 100%;
+    height: calc(100% - 1.6rem);
+    width: 100%!important;
   }
   .title-bar {
     color: $color-white;
     font-size: $font-size-content-min;
     height: $spacing-large;
-  //   justify-content: space-between;
-  //   display: flex;
-  //   height: $spacing-medium;
-  //   position: absolute;
-  //   top: 0;
-  //   width: $width-total;
   }
-  .status-bar {
-    @extend %remove-spacing;
+  .ui-resizable-handle {
+    background-color: transparentize($color-background-page, 0.5);
+    border-bottom: black solid 1px;
     bottom: 0;
-    flex-shrink: unset!important;
-    height: $spacing-medium;
-    min-height: $spacing-medium;
-    overflow: hidden;
+    height: 5px;
     position: absolute;
-    width: $width-total;
+    width: 5px;
+    z-index: unset!important;
+    &.ui-resizable-s {
+      cursor: s-resize;
+      left: 50%;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.ui-resizable-se {
+      border-right: black solid 1px;
+      cursor: se-resize;
+      right: 0;
+    }
+    &.ui-resizable-sw {
+      border-left: transparent solid 1px;
+      cursor: sw-resize;
+      left: 0;
+    }
   }
 }
-//   background-color: transparentize($color-black, 0.8);
-// .ui-resizable-handle {
-//   bottom: ($spacing-medium - 1rem) * -1;
-//   color: $color-background-page;
-//   font-family: 'Font Awesome 5 Free';
-//   font-weight: 700;
-//   position: absolute;
-//   &.ui-resizable-s {
-//     border-bottom: (($spacing-medium - 1rem) / 2) solid $color-background-page;
-//     bottom: ($spacing-medium - 1rem) / 2;
-//     cursor: s-resize;
-//     left: 0;
-//     margin: auto;
-//     right: 0;
-//     width: $spacing-medium;
-//   }
-//   &.ui-resizable-se {
-//     cursor: se-resize;
-//     right: 0;
-//     transform: rotate(-45deg);
-//     &:before {
-//       content: '\f107';
-//     }
-//   }
-//   &.ui-resizable-sw {
-//     cursor: sw-resize;
-//     left: 0;
-//     transform: rotate(45deg);
-//     &:before {
-//       content: '\f107';
-//     }
-//   }
-// }

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ "css/vendors/98.css" | relURL }}">
 <!-- 📍 Main SCSS -->
 {{ $sassOptions := (dict "targetPath" "css/main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $sassMainFile := resources.Get "scss/main.scss" | resources.ToCSS $sassOptions }}

@@ -1,5 +1,7 @@
 {{ define "main" }}
-  {{ with .Site.Menus.main }}
-    {{ partial "navbar-primary.html" (dict "priority" "primary" "items" .) }}
-  {{ end }}
+  <main class="home">
+    {{ with .Site.Menus.main }}
+      {{ partial "navbar-primary.html" (dict "priority" "primary" "items" .) }}
+    {{ end }}
+  </main>
 {{ end }}

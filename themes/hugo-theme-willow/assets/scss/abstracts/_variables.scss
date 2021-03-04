@@ -104,8 +104,10 @@ $width-total: 100%;
 */
 
 $font-family-monospace: 'Victor Mono', monospace !default; // content
-$font-family-sans-serif: 'Saira Extra Condensed', sans-serif !default; // headings
-$sans-serif-letter-spacing: 0.6px;
+$font-family-sans-serif: 'Fira Sans Condensed', sans-serif !default; // headings
+$font-family-icons: 'Font Awesome 5 Free' !default; // headings
+// $font-family-sans-serif: 'Microsoft Sans Serif', sans-serif !default; // headings
+$sans-serif-letter-spacing: .1px;
 
 $font-size-body: 16px !default;
 $font-size-content-max: 1rem !default;
@@ -114,6 +116,7 @@ $font-size-x-large: 4rem;
 $font-size-large: 3rem;
 
 $font-weight-body: 400 !default;
+$font-weight-title: 700 !default;
 
 $text-color: (
   dark: (

@@ -1,7 +1,5 @@
 @import './vendors/vendor-functions';
 @import './vendors/vendor-variables';
-@import './vendors/bulma/bulma';
-@import './vendors/98/style';
 
 @import './abstracts/functions';
 @import './abstracts/keyframes';
@@ -12,6 +10,7 @@
 @import './base/helpers';
 
 @import './components/navbar';
+@import './components/table';
 @import './components/title';
 @import './components/window';
 
@@ -29,10 +28,18 @@ ul.tree-view,
   -webkit-font-smoothing: auto;
 }
 
-.title-bar-controls button[aria-label="Minimize"],
-.title-bar-controls button[aria-label="Maximize"],
-.title-bar-controls button[aria-label="Close"] {
-  background-image: none;
+.title-bar-controls button.minimize,
+.title-bar-controls button.maximize,
+.title-bar-controls button.close {
   height: $spacing-medium - .2rem;
   width: $spacing-medium - .2rem;
+  background-position: center;
+}
+
+.title-bar-controls button.minimize {
+  background-position: bottom 5px left 50%;
+}
+
+.window-body {
+  margin: unset;
 }

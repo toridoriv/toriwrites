@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Tori Writes (Online)</title>
+    <link>https://toriwrites.online/tags/</link>
+    <description>Recent content in Tags on Tori Writes (Online)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>WTFPL</copyright>
+    <lastBuildDate>Sat, 14 Nov 2020 15:36:38 -0300</lastBuildDate><atom:link href="https://toriwrites.online/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fiction</title>
+      <link>https://toriwrites.online/tags/fiction/</link>
+      <pubDate>Sat, 14 Nov 2020 15:36:38 -0300</pubDate>
+      
+      <guid>https://toriwrites.online/tags/fiction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spanish</title>
+      <link>https://toriwrites.online/tags/spanish/</link>
+      <pubDate>Sat, 14 Nov 2020 15:36:38 -0300</pubDate>
+      
+      <guid>https://toriwrites.online/tags/spanish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithms</title>
+      <link>https://toriwrites.online/tags/algorithms/</link>
+      <pubDate>Sat, 06 Jun 2020 09:00:00 +0000</pubDate>
+      
+      <guid>https://toriwrites.online/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming language</title>
+      <link>https://toriwrites.online/tags/programming-language/</link>
+      <pubDate>Wed, 29 Apr 2020 09:00:00 +0000</pubDate>
+      
+      <guid>https://toriwrites.online/tags/programming-language/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>racket</title>
+      <link>https://toriwrites.online/tags/racket/</link>
+      <pubDate>Sat, 29 Feb 2020 09:00:00 +0000</pubDate>
+      
+      <guid>https://toriwrites.online/tags/racket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SML</title>
+      <link>https://toriwrites.online/tags/sml/</link>
+      <pubDate>Mon, 30 Dec 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://toriwrites.online/tags/sml/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
